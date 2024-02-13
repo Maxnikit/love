@@ -17,13 +17,12 @@ h1 span {
   color: #fc9786;
 }
 img {
-  width: 300px;
+  max-width: 300px;
 }
 
 button {
   font-size: 20px;
   padding: 10px;
-  height: 40px;
   width: 150px;
 
   transition: 0.5s;
