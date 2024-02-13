@@ -1,20 +1,30 @@
 import "normalize.css";
-import "./style.css";
 
+import "./heart.css";
+import "./style.css";
 import waiting from "./waiting.gif";
 import success from "./success2.gif";
 import fail from "./fail.gif";
 import crying from "./crying.gif";
 
-// initial load
-const img = document.querySelector("img");
-img.src = waiting;
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  document.querySelector("body").innerHTML =
-    "<h1>Зайдите с компьютера, пожалуйста) ♡</h1><img>";
-  document.querySelector("img").src = crying;
+const img = document.querySelector("img");
+const hearts = document.querySelectorAll(".heart");
+function toggleHearts() {
+  hearts.forEach((heart) => {
+    heart.classList.toggle("heart");
+  });
+}
+function initialLoad() {
+  img.src = waiting;
+
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.querySelector("body").innerHTML =
+      "<h1>Зайди с компьютера, пожалуйста) ♡</h1><img>";
+    document.querySelector("img").src = crying;
+  }
+  toggleHearts();
 }
 
 function shePressedYes() {
@@ -25,6 +35,8 @@ function shePressedYes() {
 
   noBtn.style.display = "none";
   yesBtn.style.display = "none";
+
+  toggleHearts();
 }
 
 function shePressedNo() {
@@ -50,3 +62,5 @@ noBtn.addEventListener("click", () => {
 yesBtn.addEventListener("click", () => {
   shePressedYes();
 });
+
+initialLoad();

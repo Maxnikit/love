@@ -17,7 +17,9 @@ h1 span {
   color: #fc9786;
 }
 img {
+  position: relative;
   max-width: 300px;
+  z-index: 1;
 }
 
 button {
@@ -28,6 +30,7 @@ button {
   transition: 0.5s;
 }
 #noBtn {
+  z-index: 2;
   position: absolute;
   background-color: #f44336;
   border: 2px solid #f44336;
