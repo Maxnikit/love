@@ -10,6 +10,12 @@ body {
   /* font-optical-sizing: auto; */
   font-weight: normal;
   font-style: normal;
+  zoom: 150%;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    zoom: 100%;
+  }
 }
 h1 {
 }
