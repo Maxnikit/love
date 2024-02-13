@@ -19,6 +19,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       title: "Placeholder",
+      favicon: "./src/favicon.ico",
       myPageHeader: "Hello World",
       template: "./src/index.html",
       filename: "index.html",
